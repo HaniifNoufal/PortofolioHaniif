@@ -1,4 +1,14 @@
-/* Konfigurasi Dasar Box Model */
+/* Konfigurasi Dasar & Variabel Warna */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --bg-body: #f3f4f6;
+    --bg-card: #ffffff;
+    --border-color: #e5e7eb;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,84 +16,111 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.7;
 }
 
-/* Header */
+/* Header Profesional */
 .header {
-    background-color: #004080;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: white;
-    padding: 30px;
+    padding: 40px 20px;
     text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
 }
 
 .header h3 {
-    margin-top: 5px;
-    color: #b3d1ff;
+    color: #93c5fd;
     font-size: 1.1rem;
+    font-weight: 400;
 }
 
-/* Navigasi / Topnav */
+/* Navigasi Utama (Sticky & Elegan) */
 .topnav {
-    background-color: #333;
+    background-color: #111827;
     overflow: hidden;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
 }
 
 .topnav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #d1d5db;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 20px;
     text-decoration: none;
     font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: var(--primary-color);
+    color: white;
 }
 
 /* Container Utama */
 .container {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 15px;
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
 /* Kartu / Section */
 .card {
-    background: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--bg-card);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
 }
 
 .card h2 {
-    color: #004080;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    border-bottom: 2px solid #004080;
-    padding-bottom: 5px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    font-weight: 600;
 }
 
-/* Foto Profil & Float */
+.card h3 {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+/* Foto Profil & Layout Teks */
 .profile-img {
     float: left;
-    width: 140px;
-    height: 170px;
+    width: 150px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 5px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .clearfix::after {
@@ -92,50 +129,63 @@ body {
     display: table;
 }
 
-/* Tabel */
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+/* Tabel Modern */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
 }
 
 th, td {
-    padding: 12px;
+    padding: 14px 16px;
     text-align: left;
 }
 
 th {
-    background-color: #004080;
+    background-color: var(--primary-color);
     color: white;
+    font-weight: 600;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f8fafc;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
 }
 
 /* List / Daftar */
 ul, ol {
     margin-left: 20px;
-    margin-top: 10px;
+    color: var(--text-muted);
 }
 
 li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
-/* Form Kontak */
+/* Form Kontak Profesional */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
 }
 
 .form-group input[type="text"],
@@ -143,30 +193,47 @@ li {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .btn {
-    background-color: #004080;
+    background-color: var(--primary-color);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 .btn:hover {
-    background-color: #00264d;
+    background-color: var(--primary-dark);
 }
 
-/* Footer */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Footer Profesional */
 .footer {
     text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
+    background-color: #111827;
+    color: #9ca3af;
+    padding: 20px;
+    margin-top: 40px;
     font-size: 0.9rem;
 }
